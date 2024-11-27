@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ProdutoControllers {
 	@RequestMapping("/cadastrarProduto")
-	public String form() {
+	public String CadastrarProduto() {
 		return"produto/formProduto";
 	}
-	
+	@RequestMapping("/cadastrarClientes")
+	public String CadastroClientes() {
+		return "clientes/";
+	}
 }
