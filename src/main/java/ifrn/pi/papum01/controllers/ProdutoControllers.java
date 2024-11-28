@@ -1,16 +1,17 @@
 package ifrn.pi.papum01.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProdutoControllers {
-	@RequestMapping("/cadastrarProduto")
+	@RequestMapping("/cadastro/produto")
 	public String CadastrarProduto() {
-		return"produto/formProduto";
+		return "CadastrarProdutos";
 	}
-	@RequestMapping("/cadastrarClientes")
-	public String CadastroClientes() {
-		return "clientes/";
+	@PostMapping("/Produto")
+	public String adicionar() {
+		return "produto-adicionado";
 	}
 }
