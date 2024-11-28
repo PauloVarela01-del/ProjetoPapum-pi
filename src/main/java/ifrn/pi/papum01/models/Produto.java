@@ -15,7 +15,7 @@ public class Produto {
 	private String descricao;
 	private String tipo;
 	private double valor;
-	private double quantidade;
+	private int quantidade;
 
 	public String getDescricao() {
 		return descricao;
@@ -41,11 +41,11 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public double getQuantidade() {
+	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(double quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
@@ -63,5 +63,11 @@ public class Produto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [codigo=" + codigo + ", nome=" + nome + ", descricao=" + descricao + ", tipo=" + tipo
+				+ ", valor=" + valor + ", quantidade=" + quantidade + "]";
 	}
 }
