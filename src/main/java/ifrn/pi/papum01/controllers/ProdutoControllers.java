@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import ifrn.pi.papum01.models.Produto;
 import ifrn.pi.papum01.repository.ProdutoRepository;
@@ -12,23 +11,25 @@ import ifrn.pi.papum01.repository.ProdutoRepository;
 @Controller
 public class ProdutoControllers {
 	
-	
-	
 	@Autowired 
 	private ProdutoRepository pr;
 	
 	
 	@RequestMapping("/cadastro/produto")
 	public String CadastrarProduto() {
-		return "CadastrarProdutos";
+		return "produtos/CadastrarProdutos";
 	}
-	@PostMapping("/Produto")
+
+	@PostMapping("/produto")
 	public String adicionar(Produto produto) {
 		
 		System.out.println(produto);
+		
 		pr.save(produto);
 		
-		return "produto-adicionado";
+		return "produtos/produto-adicionado";
+		
+		
 	}
 	
 
