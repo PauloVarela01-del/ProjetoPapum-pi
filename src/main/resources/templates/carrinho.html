@@ -2,9 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CARRINHO</title>
+
 </head>
 <body>
-
+	
+	<h1>Produtos no Carrinho</h1>
+    <ul>
+        <th:block th:each="produto : ${produtos}">
+            <li th:text="${produto.nome}"></li>
+        </th:block>
+    </ul>
+    <a href="/cadastro/produto">Adicionar mais produtos</a>
+    
 </body>
 </html>
