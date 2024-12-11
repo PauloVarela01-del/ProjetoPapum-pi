@@ -1,16 +1,23 @@
 package ifrn.pi.papum01.controllers;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
+=======
+>>>>>>> refs/remotes/origin/main
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PathVariable;
+=======
+>>>>>>> refs/remotes/origin/main
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ifrn.pi.papum01.models.Produto;
 import ifrn.pi.papum01.models.Usuario;
 import ifrn.pi.papum01.repository.UsuarioRepository;
 
@@ -55,4 +62,12 @@ public class UsuarioControllers {
     	ur.delete(usuario);
     	return"redirect:/usario/lista";
     }
+    @GetMapping("/usuarios/lista") // Responsavel por Salvar e exibir os produtos //post
+	public ModelAndView listar() {
+		List<Usuario> usuarios = ur.findAll();
+		ModelAndView mv = new ModelAndView("lista");
+		mv.addObject("Usuario", usuarios);
+		return mv;
+    }
+    
 }
