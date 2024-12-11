@@ -2,6 +2,7 @@
 <html  xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 
@@ -20,7 +21,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de produtos</h1>
+		<h1 align="center">Lista de produtos</h1>
 
 
 		<table>
@@ -42,7 +43,8 @@
 					<td th:text="${p.descricao}">Frango, Azeitona</td>
 					<td th:text="${p.tipo}">Lanches</td>
 					<td th:text="${p.valor}">39</td>
-
+                    <td><a th:href="@{/{codigo}/selecionar(codigo=${p.codigo})}"><i class="material-icons">edit</i></a></td>
+                    <td><a th:href="@{/{codigo}/remover(codigo=${p.codigo})}"><i class="material-icons">delete</i></a></td>
 				</tr>
 			</tbody>
 
