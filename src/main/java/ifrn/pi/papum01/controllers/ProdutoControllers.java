@@ -70,7 +70,7 @@ public class ProdutoControllers {
 		ModelAndView mv = new ModelAndView();
 		Optional<Produto> opt = pr.findById(codigo);
 		if (opt.isEmpty()) {
-
+              
 		}
 		Produto produto = opt.get();
 		pr.delete(produto);
