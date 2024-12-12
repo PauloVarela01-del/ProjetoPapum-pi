@@ -10,9 +10,9 @@
 			<img src="/images/logo.jpeg" alt="Logo da Empresa" width="100"
 				style="margin-top: 1px;">
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="sass.html">Cadastro de Produtos</a></li>
-				<li><a href="badges.html">Lista de Produtos</a></li>
-				<li><a href="collapsible.html">JavaScript</a></li>
+				<li><a href="/cadastro/usuario">Cadastro de Usuário</a></li>
+				
+				
 			</ul>
 		</div>
 	</nav>
@@ -40,6 +40,8 @@
 		   <td th:text="${u.cpf}"></td>
 		   <td th:text="${u.endereco}"></td>
 		   <td th:text="${u.email}"></td>
+           <td><a th:href="@{/{id}/selecionar/usuario(id=${u.id})}"><i class="material-icons">edit</i></a></td>
+           <td><a th:href="@{/{id}/remover/usuario(id=${u.id})}"><i class="material-icons">delete</i></a></td>
 		</tr>
 		
 		</tbody>
