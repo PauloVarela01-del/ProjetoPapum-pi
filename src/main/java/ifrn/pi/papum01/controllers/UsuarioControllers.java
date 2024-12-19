@@ -69,11 +69,25 @@ public class UsuarioControllers {
     	}
     	Usuario usuario = opt.get();
     	md.setViewName("/usuarios/lista");
-    	md.addObject("usuarios", usuario);
+    	md.addObject("usuario", usuario);
     	return md;
     	
     }
-    
-    
+        @GetMapping("/{id}/detalhes/usuario")
+        public ModelAndView detalharUsuario(@PathVariable Long id) {
+    	ModelAndView mv = new ModelAndView();
+    	Optional<Usuario> opt = ur.findById(id);
+    	
+    	if(opt.isEmpty()) { // se for vazio eu redireciono para listar
+    	mv.setViewName("redirect:/usuario/lista");
+    	return mv;
+    	
+    	}
+    	
+    	mv.setViewName("usuarios/detalhes");
+    	Usuario usuario = opt.get();
+    	mv.addObject("usuario", usuario);
+    	return mv;
+    }
     
 }

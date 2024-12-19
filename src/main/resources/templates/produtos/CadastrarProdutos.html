@@ -4,21 +4,11 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <head>
 <meta charset="UTF-8">
-<nav>
-	<nav class="indigo darken-4" style="height: 100px;">
-		<div class="nav-wrapper">
-			<img src="/images/logo.jpeg" alt="Logo da Empresa" width="100"
-				style="margin-top: 1px;">
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="/Produto">Lista de Usuário</a></li>
-				
-			</ul>
-		</div>
-	</nav>
+    <div th:replace="~{menu :: menu}"></div>
 	<title>Cadastro Produtos</title>
 </head>
 <body>
-
+  
 
 	<div class="container">
 		<h1 class="orange-text" align="center">Cadastro de Produto</h1>
@@ -27,22 +17,23 @@
 			<form action="/Produto" method="POST">
 
 				<div>
-					<input type="hidden" name="codigo" th:value="${produto.codigo}"
-						readonly="readonly">
+					<input type="hidden" name="codigo" th:value="${produto.codigo}"readonly="readonly">
+						
 				</div>
 
-				<label for="nome">Nome do Produto</label> <input type="text"
-					id="nome" name="nome" required th:value="${produto.nome}">
+				<label for="nome">Nome do Produto</label> 
+				<input type="text"	id="nome" name="nome" required th:value="${produto.nome}">
 
 
-				<label for="descricao">Descrição</label> <input id="descricao"
-					name="descricao" rows="4" required th:value="${produto.descricao}">
+				<label for="descricao">Descrição</label> 
+			    <input id="descricao"name="descricao" rows="4" required th:value="${produto.descricao}">
 
-				<label for="preco">Valor (R$)</label> <input type="number"
-					id="valor" name="valor" step="0.01" required
-					th:value="${produto.valor}"> <label for="estoque">Quantidade
-					em Estoque</label> <input type="number" id="quantidade" name="quantidade"
-					required th:value="${produto.quantidade}">
+				<label for="preco">Valor (R$)</label> 
+			    <input type="number"	id="valor" name="valor" step="0.01" required th:value="${produto.valor}">
+					 
+				 <label for="estoque">Quantidadeem Estoque</label>
+				 <input type="number" id="quantidade" name="quantidade" required th:value="${produto.quantidade}">
+					
 
 				<button type="submit">Cadastrar</a></button>
 				<button type="reset">Limpar</a></button>

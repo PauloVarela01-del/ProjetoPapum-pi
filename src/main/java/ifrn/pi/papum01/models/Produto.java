@@ -4,19 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long codigo;
+	private Long codigo;
 	private String nome;
 	private String descricao;
 	private String tipo;
 	private double valor;
 	private int quantidade;
-
+   
+	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -49,11 +51,11 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public long getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 

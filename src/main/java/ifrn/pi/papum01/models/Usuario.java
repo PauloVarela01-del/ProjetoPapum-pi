@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Usuario {
@@ -15,15 +16,10 @@ public class Usuario {
 	private String cpf;
 	private String endereco;
 	private String email;
-	private String usuario;
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
+	
+    
+	@ManyToOne
+	private Pedido pedido;
 
 	public Long getId() {
 		return id;
